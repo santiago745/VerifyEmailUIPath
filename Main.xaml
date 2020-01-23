@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1012.8,2282.4" sap2010:WorkflowViewState.IdRef="Main2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1019,2401" sap2010:WorkflowViewState.IdRef="Main2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
       <x:String>System.Activities</x:String>
@@ -47,12 +47,11 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="992.8,2315.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="999,2301" sap2010:WorkflowViewState.IdRef="Sequence_10">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="Time_CheckEmail" />
       <Variable x:TypeArguments="x:TimeSpan" Name="Time_DelayReceivedEmail" />
@@ -66,7 +65,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="951.2,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign sap:VirtualizedContainerService.HintSize="957,60" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="ui:GenericValue">[Day]</OutArgument>
       </Assign.To>
@@ -74,7 +73,7 @@
         <InArgument x:TypeArguments="ui:GenericValue">[Now.Hour]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="951.2,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+    <Assign sap:VirtualizedContainerService.HintSize="957,60" sap2010:WorkflowViewState.IdRef="Assign_8">
       <Assign.To>
         <OutArgument x:TypeArguments="ui:GenericValue">[Day]</OutArgument>
       </Assign.To>
@@ -82,34 +81,34 @@
         <InArgument x:TypeArguments="ui:GenericValue">[Day*7]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="951.2,562.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="Data\DataEmail.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="957,557" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="Data\DataEmail.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,452.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,448" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadCell Cell="A2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" PreserveFormat="True" SheetName="Email">
+            <ui:ExcelReadCell Cell="A2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" PreserveFormat="True" SheetName="Email">
               <ui:ExcelReadCell.Result>
                 <OutArgument x:TypeArguments="x:Int32">[Time_CheckEmail]</OutArgument>
               </ui:ExcelReadCell.Result>
             </ui:ExcelReadCell>
-            <ui:ExcelReadCell Cell="B2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" SheetName="Email">
+            <ui:ExcelReadCell Cell="B2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" SheetName="Email">
               <ui:ExcelReadCell.Result>
                 <OutArgument x:TypeArguments="x:TimeSpan">[Time_DelayReceivedEmail]</OutArgument>
               </ui:ExcelReadCell.Result>
             </ui:ExcelReadCell>
-            <ui:ExcelReadCell Cell="C2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadCell_3" PreserveFormat="True" SheetName="Email">
+            <ui:ExcelReadCell Cell="C2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_3" PreserveFormat="True" SheetName="Email">
               <ui:ExcelReadCell.Result>
                 <OutArgument x:TypeArguments="x:String">[Mail_AlertEmailNotReceived]</OutArgument>
               </ui:ExcelReadCell.Result>
             </ui:ExcelReadCell>
-            <ui:ExcelReadCell Cell="D2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadCell_4" PreserveFormat="True" SheetName="Email">
+            <ui:ExcelReadCell Cell="D2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_4" PreserveFormat="True" SheetName="Email">
               <ui:ExcelReadCell.Result>
                 <OutArgument x:TypeArguments="x:TimeSpan">[Time_DelayCheckEmails]</OutArgument>
               </ui:ExcelReadCell.Result>
@@ -118,20 +117,20 @@
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <While sap:VirtualizedContainerService.HintSize="951.2,1327.2" sap2010:WorkflowViewState.IdRef="While_1" Condition="[Day &lt;= &quot;168&quot;]">
-      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="906.4,1168" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <While sap:VirtualizedContainerService.HintSize="957,1319" sap2010:WorkflowViewState.IdRef="While_1" Condition="[Day &lt;= &quot;168&quot;]">
+      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="911,1161" sap2010:WorkflowViewState.IdRef="Sequence_14">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="864.8,1075.2" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Enumerable.Range(0,Time_CheckEmail)]">
+        <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="869,1069" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Enumerable.Range(0,Time_CheckEmail)]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="x:Int32">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Int32" Name="item" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="829.6,940.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="833,935" sap2010:WorkflowViewState.IdRef="Sequence_13">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Default="Bandeja de entrada" Name="Bandeja" />
                   <Variable x:TypeArguments="ui:GenericValue" Name="DateTime" />
@@ -142,7 +141,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="788,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign sap:VirtualizedContainerService.HintSize="791,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[DateNow]</OutArgument>
                   </Assign.To>
@@ -150,7 +149,7 @@
                     <InArgument x:TypeArguments="x:String">["MM/dd/yyyy " + Time_DelayReceivedEmail.ToString]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign sap:VirtualizedContainerService.HintSize="788,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign sap:VirtualizedContainerService.HintSize="791,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                   <Assign.To>
                     <OutArgument x:TypeArguments="ui:GenericValue">[DateTime]</OutArgument>
                   </Assign.To>
@@ -158,32 +157,32 @@
                     <InArgument x:TypeArguments="ui:GenericValue">[Now.ToString(DateNow)]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:GetOutlookMailMessages Filter="{x:Null}" TimeoutMS="{x:Null}" Account="Test.745@outlook.com" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="788,22.4" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_2" MailFolder="[Bandeja]" MarkAsRead="False" Messages="[Mail_Out]" OnlyUnreadMessages="False" Top="10" />
-                <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="788,585.6" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Mail_Out]">
+                <ui:GetOutlookMailMessages Account="{x:Null}" Filter="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="791,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_2" MailFolder="[Bandeja]" MarkAsRead="False" Messages="[Mail_Out]" OnlyUnreadMessages="False" Top="10" />
+                <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="791,581" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Mail_Out]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="snm:MailMessage">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="752.8,451.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="755,447" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[DateTime&lt;item.Headers(&quot;Date&quot;).ToString]" sap:VirtualizedContainerService.HintSize="711.2,296" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If Condition="[DateTime&lt;item.Headers(&quot;Date&quot;).ToString]" sap:VirtualizedContainerService.HintSize="713,293" sap2010:WorkflowViewState.IdRef="If_3">
                           <If.Then>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[item.Headers(&quot;Date&quot;).ToString]" />
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[item.Headers(&quot;Date&quot;).ToString]" />
                           </If.Then>
                           <If.Else>
-                            <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="[Mail_AlertEmailNotReceived]" Body="[&quot;Querido, &quot;+ Mail_AlertEmailNotReceived +&#xA;&quot;La carpeta &quot;+Bandeja+&quot; no ha recibido ningún correo electrónico durante un tiempo &quot;+Time_DelayReceivedEmail.ToString+&quot; . Atentamente,&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" IsBodyHtml="False" IsDraft="False" Subject="EmailVerify" To="[Mail_AlertEmailNotReceived]">
+                            <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="[Mail_AlertEmailNotReceived]" Body="[&quot;Querido, &quot;+ Mail_AlertEmailNotReceived +&#xA;&quot;La carpeta &quot;+Bandeja+&quot; no ha recibido ningún correo electrónico durante un tiempo &quot;+Time_DelayReceivedEmail.ToString+&quot; . Atentamente,&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" IsBodyHtml="False" IsDraft="False" Subject="EmailVerify" To="[Mail_AlertEmailNotReceived]">
                               <ui:SendOutlookMail.Files>
                                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                               </ui:SendOutlookMail.Files>
                             </ui:SendOutlookMail>
                           </If.Else>
                         </If>
-                        <Delay Duration="[Time_DelayCheckEmails]" sap:VirtualizedContainerService.HintSize="711.2,22.4" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                        <Delay Duration="[Time_DelayCheckEmails]" sap:VirtualizedContainerService.HintSize="713,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEach.Body>
